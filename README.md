@@ -1,6 +1,6 @@
 # -Movie-Review-and-Recommendation-Engine
 
-# 🎬 Movie Review & Recommendation Engine using SQL
+
 
 ## 📌 Overview
 This project is a SQL-based simulation of a movie review and recommendation system. It manages user interactions, tracks viewing behavior, captures sentiment in reviews, and provides smart recommendations — all within a normalized PostgreSQL database structure. Inspired by real-world platforms like IMDb and Netflix, this system demonstrates how data-driven logic can power personalized recommendations.
