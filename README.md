@@ -49,6 +49,7 @@ ORDER BY avg_rating DESC
 LIMIT 5;
 
 🎯 User’s Favorite Genre
+
 SELECT u.name, g.genre_name, COUNT(*) AS total_watched
 FROM Users u
 JOIN Watch_History wh ON u.user_id = wh.user_id
@@ -58,6 +59,7 @@ GROUP BY u.name, g.genre_name
 ORDER BY total_watched DESC;
 
 📊 Rank Movies by Sentiment + Rating
+
 SELECT 
     m.title,
     ROUND(AVG(r.rating),2) AS avg_rating,
@@ -69,6 +71,7 @@ JOIN Reviews rv ON m.movie_id = rv.movie_id
 GROUP BY m.title;
 
 🔥 Identify High Engagement Users
+
 SELECT u.name, COUNT(*) AS total_movies, 
        SUM(CASE WHEN wh.completed THEN 1 ELSE 0 END) AS completed_movies
 FROM Users u
@@ -78,6 +81,7 @@ HAVING SUM(CASE WHEN wh.completed THEN 1 ELSE 0 END) > 1;
 
 👁️ Views
 🎥 Recommended Movies
+
 CREATE VIEW recommended_movies AS
 SELECT m.title, ROUND(AVG(r.rating),2) AS avg_rating
 FROM Movies m
